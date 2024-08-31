@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Crew Access</title>
+    <link rel="stylesheet" href="..//CSS/waste_access_crew.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Waste Crew Access</h1>
+        
+        <!-- Waste Management Services List -->
+        <div id="services-list">
+            <h2>Available Waste Management Services</h2>
+            <ul id="services">
+                <!-- List of services will be populated here -->
+            </ul>
+        </div>
+
+        <!-- Application Form (Initially Hidden) -->
+        <div id="application-form" class="hidden">
+            <h2>Apply for Job</h2>
+            <form id="apply-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for waste management services
+        const services = [
+            { name: 'Sampurn(e)arth', hiring: true, contact: 'info@sampurnearth.com' },
+            { name: 'Attero Recycling', hiring: false, contact: 'info@attero.in' },
+            { name: 'Green Planet Waste Management', hiring: true, contact: 'contact@greenplanetindia.com' },
+            { name: 'The Earth Saviors Foundation', hiring: false, contact: 'info@earthsaviors.org' }
+        ];
+
+        const servicesList = document.getElementById('services');
+        const applicationForm = document.getElementById('application-form');
+
+        // Populate the list of services
+        services.forEach(service => {
+            const li = document.createElement('li');
+            li.innerHTML = `${service.name} - ${service.hiring ? 'Hiring' : 'Not Hiring'} <button onclick="apply('${service.name}')">Apply</button>`;
+            servicesList.appendChild(li);
+        });
+
+        // Show the application form
+        function apply(serviceName) {
+            document.getElementById('application-form').classList.remove('hidden');
+            document.getElementById('apply-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert(`Application submitted to ${serviceName}. You will be notified of any tasks.`);
+                // Here you would send form data to a server
+                // After applying, you would typically send the picker details to the service
+                // Also, set up notifications for tasks (this requires a backend system)
+            });
+        }
+    </script>
+</body>
+</html>

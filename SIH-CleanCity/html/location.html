@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Services</title>
+    <link rel="stylesheet" href="..//CSS/new2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Nearby Waste Management Services</h2>
+        <p id="location-display"></p>
+        <ul id="services-list">
+            <!-- Services will be listed here based on location -->
+        </ul>
+    </div>
+
+    <script src="..//java script/location-access.js">
+        // Extract the latitude and longitude from the URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const latitude = urlParams.get('latitude');
+        const longitude = urlParams.get('longitude');
+
+        if (latitude && longitude) {
+            // Display the location (in real-world use, reverse geocoding can be applied to find the address)
+            document.getElementById('location-display').textContent = `Services near (${latitude}, ${longitude})`;
+
+            // Use latitude and longitude to fetch or display services (Here we'll just simulate)
+            // You could use a service like Google Maps API to find the actual address or nearby services.
+            const services = ["Service A - Near You", "Service B - Near You", "Service C - Near You"];
+            
+            const servicesList = document.getElementById('services-list');
+            services.forEach(service => {
+                const li = document.createElement('li');
+                li.textContent = service;
+                servicesList.appendChild(li);
+            });
+        } else {
+            document.getElementById('location-display').textContent = "Location not available.";
+        }
+    </script>
+</body>
+</html>

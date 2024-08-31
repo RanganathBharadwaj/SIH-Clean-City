@@ -1,0 +1,77 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Container Styles */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Heading Styles */
+h2 {
+    margin-bottom: 20px;
+    color: #00796b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Paragraph (Location Display) Styles */
+#location-display {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Services List Styles */
+#services-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#services-list li {
+    background-color: #4db6ac;
+    color: white;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#services-list li:hover {
+    background-color: #00796b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #location-display {
+        font-size: 16px;
+    }
+
+    #services-list li {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

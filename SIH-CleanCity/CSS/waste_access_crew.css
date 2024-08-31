@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image:url(../images/crew.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background: #ffffff00;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h1 {
+    color: whitesmoke;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+}
+
+/* List Styles */
+#services-list {
+    margin: 20px 0;
+}
+
+#services {
+    list-style-type: none;
+    padding: 0;
+}
+
+#services li {
+    background: #e0f2f1;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#services button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#services button:hover {
+    background-color: #004d40;
+}
+
+/* Application Form Styles */
+#application-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button[type="submit"] {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #004d40;
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+}

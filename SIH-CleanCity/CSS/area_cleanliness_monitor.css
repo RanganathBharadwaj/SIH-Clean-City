@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(245, 245, 245,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image:url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Container Styles */
+.container {
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(255, 255, 255,0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #00796b;
+}
+
+h3 {
+    color: #004d40;
+}
+
+/* Form Styles */
+.login-form, .activity-form, .chat-section {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Chat Section Styles */
+.chat-section {
+    margin-top: 20px;
+    border-top: 2px solid #00796b;
+    padding-top: 10px;
+}
+
+.chat-box {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.chat-box p {
+    margin: 5px 0;
+}

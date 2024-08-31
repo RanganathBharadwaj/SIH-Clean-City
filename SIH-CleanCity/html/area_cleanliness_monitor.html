@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Cleanliness Monitor</title>
+    <link rel="stylesheet" href="..//CSS/area_cleanliness_monitor.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Area Cleanliness Monitor</h1>
+        <h2>know your areas cleanliness status</h2>
+        <h3>lets build a healhty and clean environment that facilitates physical and well being growth</h3>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <h2>Login / Sign Up</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" placeholder="Enter your location" required>
+                </div>
+                <button type="submit">Join Group</button>
+            </form>
+        </div>
+
+        <!-- Group Interaction Section -->
+        <div id="group-section" class="hidden">
+            <h2>Group Activities</h2>
+            <div class="group-info">
+                <p id="group-name"></p>
+                <p>Share photos, comments, raise complaints, fund clean-up activities, and chat with other members in your area.</p>
+            </div>
+
+            <div class="activity-form">
+                <h3>Report an Issue</h3>
+                <form id="activity-form">
+                    <div class="form-group">
+                        <label for="photo">Upload Photo:</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment" rows="4" placeholder="Describe the issue..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaint">Raise Complaint:</label>
+                        <textarea id="complaint" name="complaint" rows="4" placeholder="Detail your complaint..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="funds">Raise Funds:</label>
+                        <input type="number" id="funds" name="funds" placeholder="Amount to raise" min="0">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="chat-section">
+                <h3>Chat with Area Members</h3>
+                <div id="chat-box" class="chat-box"></div>
+                <form id="chat-form">
+                    <div class="form-group">
+                        <input type="text" id="message" name="message" placeholder="Type your message..." required>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const location = document.getElementById('location').value;
+            document.getElementById('group-name').textContent = `Group for ${location}`;
+            document.getElementById('group-section').classList.remove('hidden');
+            document.querySelector('.login-form').classList.add('hidden');
+        });
+
+        document.getElementById('activity-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Your report has been submitted!');
+            // Handle the submission here (e.g., send data to a server)
+        });
+
+        document.getElementById('chat-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const message = document.getElementById('message').value;
+            const chatBox = document.getElementById('chat-box');
+            
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            
+            document.getElementById('message').value = '';
+            chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the latest message
+        });
+    </script>
+</body>
+</html>

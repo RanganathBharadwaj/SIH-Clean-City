@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Services</title>
+    <link rel="stylesheet" href="../CSS/loaction_access.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Nearby Waste Management Services</h2>
+        <p id="location-display"></p>
+        <ul id="services-list">
+            <!-- Services will be listed here based on location -->
+        </ul>
+    </div>
+
+    <script src="../java script/location-access.js">
+        // Extract the location from the URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const location = urlParams.get('location');
+        
+        // Display the location
+        const locationDisplay = document.getElementById('location-display');
+        locationDisplay.textContent = `Services in ${location}`;
+
+        // Example services data with real locations in Hyderabad
+        const services = {
+            "Hyderabad": [
+                "GHMC (Greater Hyderabad Municipal Corporation) - Municipal Service",
+                "ITC WOW (Wellbeing Out of Waste) - NGO Initiative",
+                "Ramky Enviro Engineers - Private Waste Management Company",
+                "BVG India Limited - Private Waste Management Service",
+                "Recykal - Digital Waste Management Platform",
+                "Waste Ventures India - Waste Collection and Recycling",
+                "Hasiru Dala Innovations - NGO focused on Waste Management",
+                "Saahas Zero Waste - Professional Waste Management Service",
+                "Vijayawada Municipal Corporation (Nearby Municipal Service)",
+                "Bharat Vikas Group - Private Facility Management Services"
+            ],
+            "Secunderabad": [
+                "GHMC (Greater Hyderabad Municipal Corporation) - Municipal Service",
+                "ITC WOW (Wellbeing Out of Waste) - NGO Initiative",
+                "Recykal - Digital Waste Management Platform",
+                "Saahas Zero Waste - Professional Waste Management Service",
+                "Ramky Enviro Engineers - Private Waste Management Company"
+            ],
+            "Madhapur": [
+                "Ramky Enviro Engineers - Private Waste Management Company",
+                "ITC WOW (Wellbeing Out of Waste) - NGO Initiative",
+                "Waste Ventures India - Waste Collection and Recycling",
+                "Recykal - Digital Waste Management Platform"
+            ],
+            "Banjara Hills": [
+                "GHMC (Greater Hyderabad Municipal Corporation) - Municipal Service",
+                "Ramky Enviro Engineers - Private Waste Management Company",
+                "Hasiru Dala Innovations - NGO focused on Waste Management",
+                "BVG India Limited - Private Waste Management Service"
+            ],
+            "Gachibowli": [
+                "Recykal - Digital Waste Management Platform",
+                "Ramky Enviro Engineers - Private Waste Management Company",
+                "Saahas Zero Waste - Professional Waste Management Service",
+                "ITC WOW (Wellbeing Out of Waste) - NGO Initiative"
+            ]
+        };
+
+        // Display the services based on location
+        const servicesList = document.getElementById('services-list');
+        const matchedServices = services[location] || ["No services found for this location"];
+        matchedServices.forEach(service => {
+            const li = document.createElement('li');
+            li.textContent = service;
+            servicesList.appendChild(li);
+        });
+    </script>
+</body>
+</html>

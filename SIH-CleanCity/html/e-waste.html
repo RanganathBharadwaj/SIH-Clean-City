@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry Waste</title>
+    <link rel="stylesheet" href="..//CSS/description.css">
+</head>
+<body>
+    <div class="container">
+        <h1>e-Waste</h1>
+        <p><h3>E waste, or electronic waste, includes discarded electronic devices such as computers, smartphones, and appliances. Proper disposal is crucial due to hazardous materials.</p></h3></p>
+        
+        <h2>Reward Information</h2>
+        <p>To receive a reward, provide a minimum of 1 kg of dry waste. The reward is <strong>₹20 per kg</strong>.</p>
+        
+        <h2>Schedule Pickup</h2>
+        <p>Fill out the form below to schedule a pickup for your dry waste. A garbage picker will be available from our service.</p>
+        
+        <form id="pickup-form">
+            <label for="pickup-date">Pickup Date:</label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+            
+            <label for="pickup-time">Pickup Time:</label>
+            <input type="time" id="pickup-time" name="pickup-time" required>
+            
+            <label for="waste-amount">Amount of Waste (in kg):</label>
+            <input type="number" id="waste-amount" name="waste-amount" min="1" required>
+            
+            <button type="submit">Schedule Pickup</button>
+        </form>
+        
+        <a href="index.html" class="btn-back">Back to Home</a>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('pickup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const date = document.getElementById('pickup-date').value;
+            const time = document.getElementById('pickup-time').value;
+            const amount = document.getElementById('waste-amount').value;
+
+            alert(`Pickup scheduled for ${date} at ${time}. Amount of waste: ${amount} kg.`);
+            // You can add additional code here to handle form submission to a server
+        });
+    </script>
+</body>
+</html>
